@@ -209,7 +209,7 @@ if feature == "Analyze Meal":
     ## If submit button is clicked
     if submit:
         image_data = input_image_setup(uploaded_file)
-        translated_input_prompt = translate_text(input_prompt, language)
+        translated_input_prompt = translate_text(input_prompt + "\nDietary Preferences:\n" + dietary_preferences, language)
         response = get_gemini_repsonse(translated_input_prompt, image_data)
         st.subheader("The Response is")
         st.write(response)
