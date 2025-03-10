@@ -12,7 +12,6 @@ import speech_recognition as sr
 import base64
 import json
 from googletrans import Translator
-import asyncio
 
 ## configure the "genai" library by providing API key
 genai.configure(api_key=os.getenv("API_KEY"))
@@ -151,9 +150,9 @@ def display_nutrition_data(user_name):
     else:
         st.write("No nutrition data found for this user.")
 
-async def translate_text(text, dest_language):
+def translate_text(text, dest_language):
     translator = Translator()
-    translated = await translator.translate(text, dest=dest_language)
+    translated = translator.translate(text, dest=dest_language)
     return translated.text
 
 ##initialize our streamlit app
