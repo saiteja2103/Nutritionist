@@ -7,3 +7,4 @@ numpy
 SpeechRecognition
 googletrans==4.0.0-rc1
 asyncio
+pyaudio
