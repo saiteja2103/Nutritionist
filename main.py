@@ -244,12 +244,9 @@ elif feature == "Chat with Nutritionist":
     chat_submit = st.button("Send")
     
     
-    voice_submit = st.button("Click to Speak", key="voice-command", help="Hold the button to speak")
+    
 
-    if voice_submit:
-        user_input = voice_to_text()
-
-    if (chat_submit or voice_submit) and user_input:
+    if (chat_submit ) and user_input:
         chat_response = chatbot_response(user_input)
         st.write("Nutritionist:", chat_response)
 
